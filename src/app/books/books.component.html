@@ -1,0 +1,7 @@
+<h4>Afrian books List</h4>
+<button (click)="toggleBooks()">Toggle Books</button>
+<ul *ngIf="isShowing">
+    <img  [src]="src" width="100px" [alt]="name">
+    <li>{{name}} by {{author}}</li>
+</ul>
+
