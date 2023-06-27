@@ -1,15 +1,6 @@
-<h4>Afrian books List</h4>
-<button (click)="toggleBooks()">
-    <ng-container *ngIf="!isShowing">Show Books</ng-container>
-    <ng-container *ngIf="isShowing">Hide Books</ng-container>
-</button>
-<ul *ngIf="isShowing">
-    
-    <ng-container *ngFor="let book of books">
-        <li>
-            <img  [src]="book.src" width="100px" [alt]="book.name"> {{book.name | titlecase }} by {{book.author | titlecase }}
-            <p>cost: {{book.amount | currency:'SHS '}}</p>
-        </li>
+<h4>Books List</h4>
+<ul *ngIf="isShowing">    
+    <ng-container *ngFor="let singleBook of books">
+        <app-book (emitBook)="addToCart()" [book]="singleBook"></app-book>
     </ng-container>
 </ul>
-

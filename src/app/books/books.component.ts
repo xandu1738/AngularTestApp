@@ -1,11 +1,7 @@
 import { Component } from '@angular/core';
+import { Book } from '../types/Book';
 
-interface Book {
-  name: string
-  author: string
-  src: string
-  amount: number
-}
+
 
 @Component({
   selector: 'app-books',
@@ -13,6 +9,8 @@ interface Book {
   styleUrls: ['./books.component.css']
 })
 export class BooksComponent {
+  cart: Book[] = [];
+
   books: Book[] = [
     {
       name: 'The River Between',
